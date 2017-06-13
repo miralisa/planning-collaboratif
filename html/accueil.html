@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Planning collaboratif</title>
+
+	<link rel="stylesheet" type="text/css"  href="../css/planning.css" />
+	<script src="../js/js-image-slider.js"  type="text/javascript"></script>
+	<meta http-equiv="content-type" 	content="text/html; charset=utf-8" />
+	<meta name="description" 			content="Le planning collaboratif gratuit et simple d'utilisation !">
+	<meta name="keywords" 				content="planning, collaboratif, groupe, projets, IHM, gratuit, mountaz">
+	<meta name="author" 				content="Edouard, Anastasiia, Thibaut, Célia, Andréa">
+	<meta name="projet" 				content="Planning collaboratif IHM (HMIN110)">
+	<meta name="année universitaire" 	content="2016-2017 M1 pluri parcours">
+
+</head>
+
+<body>
+
+
+
+	<div id="faq" class="modalInscr">
+		<div class="scroll">
+			<a href="#fermer" title="Fermer" class="fermer">X</a>
+
+
+			<h1>F.A.Q.</h1>
+
+			<h3>Comment s'inscrire sur notre site? </h3>
+			<p> Cliquez sur inscrivez vous, c'est gratuit. Il suffit ensuite de remplir les champs (au minimum ceux marqués d'une étoile rouge) puis de valider. </p>
+			<h3>Comment se connecter ? </h3>
+			<p> Une fois inscrit, il suffit de renseigner vos informations de connexion et de valider (en appuyant sur entrée ou en cliquant sur se connecter).</p>
+			<h3>Comment créer un agenda/EDT? </h3>
+			<p> Lorsque vous êtes connecté, cliquez sur le bouton à droite en forme de calendrier, saisissez le nom de l'agenda que vous souhaitez créer,et il sera automatiquement ajouté à votre liste.</p>
+			<h3>Comment inviter des collaborateurs? </h3>
+			<p>Après la création d'un agenda, en cliquant sur le bouton partage à droite, vous pouvez saisir l'adresse mail d'un collaborateur pour l'ajouter à votre planning. Lorsque celui-ci se connectera, il aura accès à ce planning. Il est nécessaire qu'une personne possède un compte pour que l'invitation soit effective</p>
+			<h3>Comment supprimer un agenda/EDT? </h3>
+			<p> Quand un agenda est selectionné, vous pouvez cliquer sur le bouton en forme de poubelle pour le supprimer. </p>
+			<h3>Comment naviguer dans la liste de ses agendas ? </h3>
+			<p> Tous les agendas qui vous concernent sont affichés dans une liste à gauche, il vous suffit de cliquer sur le nom de celui que vous voulez afficher pour le faire.</p>
+			<h3>Comment créer un évènement sur un agenda? </h3>
+			<p>En selectionnant le mode d'édition d'évènement grâce au bouton prévu à cet effet, vous pourrez, simplement en glissant la souris tout en maintenant le clic enfoncé, créer un évènement dans une plage horaire correspondant à un des créneaux définis par le responsable.</p>
+			<h3>Comment supprimer un évènement sur un agenda? </h3>
+			<p>Pour cela, cliquez sur l'évènement que vous souhaitez supprimer, puis sur le bouton supprimer qui apparaît dans la fenêtre contextuelle.</p>
+			<h3>Comment se servir des différentes commandes du calendrier ?</h3>
+			<p> Les boutons de modes permettent d'éditer les créneaux dans lesquels des évènements peuvent être créées et sont uniquement disponibles aux personnes responsables des emplois du temps (est responsable d'un emploi du temps la personne qui le crée). Pour supprimer un créneau et les évènements associés, vous devez vous mettre en mode de suppression, il faut alors faire glisser la souris comme pour la création et tous les créneaux entièrement ou partiellement selectionnés seront supprimés. Les autres boutons sont nommés explicitement</p>
+
+
+		</div>
+	</div>
+	<div id="inscr" class="modalInscr">
+		<div>
+			<a href="#fermer" title="Fermer" class="fermer">X</a>
+			<h2>INSCRIPTION</h2>
+			<form method="post" onsubmit="return validation(this)">
+				<ol>
+					<li>
+						<label>Nom : </label>
+						<input type="text" name="nom" size="20"><br>
+					</li>
+					<li>
+						<label>Prénom : </label>
+						<input type="text" name="prenom" size="20"><br>
+					</li>
+				</ol>
+
+				<ol>
+					<li>
+						<label>Photo : </label>
+						<input type="file" name="photo" ><br>
+					</li>
+
+					<li>
+						<label>E-mail : <em>*</em></label>
+						<input type="email" name="mail" required><br>
+					</li>
+					<li>
+						<label>Mot de passe (6 caractères minimum) : <em>*</em></label>
+						<input type="password" name="mdp" id="mdp" required pattern=".{6,}"><br>
+					</li>
+					<li>
+						<label>Répétez ce mot de passe : <em>*</em></label>
+						<input type="password" name="mdp2" id="mdp2" required pattern=".{6,}"><br>
+					</li>
+					<li>
+						<label> Votre profession : </label>
+						<input type="text" name="role" size="20"><br>
+					</li>
+					<center>
+						<p id="buttons">
+							<input type="submit" value="Valider" name="inscription" />
+							<input type="reset" value="Effacer la saisie" />
+						</p>
+					</center>
+				</ol>
+			</form>
+		</div>
+	</div>
+	<div id="header">Planning collaboratif </div>
+
+	<div class="centre" id="menuG">
+		<div id="logo">
+			<a href='./index.php' alt='accueil'><img id='lg' src='/img/logo.png'></a>
+		</div>
+		<div id="sousmenugauche">
+			<a href="#inscr">Inscrivez-vous</a>, c'est gratuit !
+			<form method="post">
+				mail:
+				<input type="text" name="mail" placeholder="mail@example.com">
+				<br>
+				MDP:
+				<input type="password" name="mdp" placeholder="Mot de passe">
+				<br><br>
+				<input type="submit" value="Connexion">
+			</form>
+		</div>
+		%messageCo%
+	</div>
+
+	<div class="centre" id="pagecentrale">
+		<!--<center><h2>Planning collaboratif</h2></center>-->
+		<div id="slider">
+			<img src='../img/p1.png' />
+			<img src='../img/p2.png' />
+			<img src='../img/p3.png' />
+
+		</div>
+	</div>
+
+	<div class="centre" id="menuD">
+		<a href='mailto:planning-collaboratig@yopmail.com' class="tooltip"><img class='icon' src='/img/contact.png'><em><span></span>Contactez-nous</em></a>
+		<br> <br> <br>
+		<a href='#'  class="tooltip"><img class='icon' src='/img/donate.png' onclick="nyi()"><em><span></span><center>Donner</center></em></a>
+		<a href='#faq' class="tooltip"><img class='icon' src='/img/faq.png'><em><span></span><center>Aide</center></em></a>
+	</div>
+
+	<div style="clear:both; font-size:1px;"></div> <!-- regle le soucis de debordement -->
+
+	<div id="footer">
+		<center>Prysiazhniuk, Breuillé, Rouquairol, Ruiz, Vuletić - Université de Montpellier.</center>
+	</div>
+
+</body>
+
+<script>
+function nyi(){
+
+	alert("Désolé, cette fonctionnalité n'est pas encore implémentée.");
+
+}
+</script>
+
+
+<script type="text/javascript">
+function validation(f) {
+	if (f.mdp.value == '' || f.mdp2.value == '') {
+		alert('Tous les champs ne sont pas remplis');
+		f.mdp.focus();
+		return false;
+	}
+	else if (f.mdp.value != f.mdp2.value) {
+		alert('Ce ne sont pas les mêmes mots de passe!');
+		f.mdp.focus();
+		return false;
+	}
+	else if (f.mdp.value == f.mdp2.value) {
+		return true;
+	}
+	else {
+		f.mdp.focus();
+		return false;
+	}
+}
+</script>
+</html>
